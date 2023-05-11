@@ -44,23 +44,23 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.rdbBlack = new System.Windows.Forms.RadioButton();
-            this.rdbWhite = new System.Windows.Forms.RadioButton();
-            this.rdbGray = new System.Windows.Forms.RadioButton();
-            this.rdbRed = new System.Windows.Forms.RadioButton();
-            this.rdbBlue = new System.Windows.Forms.RadioButton();
-            this.rdbGreen = new System.Windows.Forms.RadioButton();
-            this.rdbSilver = new System.Windows.Forms.RadioButton();
-            this.rdbBrown = new System.Windows.Forms.RadioButton();
             this.rdbYellow = new System.Windows.Forms.RadioButton();
+            this.rdbBrown = new System.Windows.Forms.RadioButton();
+            this.rdbSilver = new System.Windows.Forms.RadioButton();
+            this.rdbGreen = new System.Windows.Forms.RadioButton();
+            this.rdbBlue = new System.Windows.Forms.RadioButton();
+            this.rdbRed = new System.Windows.Forms.RadioButton();
+            this.rdbGray = new System.Windows.Forms.RadioButton();
+            this.rdbWhite = new System.Windows.Forms.RadioButton();
+            this.rdbBlack = new System.Windows.Forms.RadioButton();
             this.label9 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.ckbAirConditioner = new System.Windows.Forms.CheckBox();
-            this.ckbAutomaticTransmission = new System.Windows.Forms.CheckBox();
-            this.ckbCruiseControl = new System.Windows.Forms.CheckBox();
-            this.ckbNavigationSystem = new System.Windows.Forms.CheckBox();
-            this.ckbSunroof = new System.Windows.Forms.CheckBox();
             this.ckbFourWheelDrive = new System.Windows.Forms.CheckBox();
+            this.ckbSunroof = new System.Windows.Forms.CheckBox();
+            this.ckbNavigationSystem = new System.Windows.Forms.CheckBox();
+            this.ckbCruiseControl = new System.Windows.Forms.CheckBox();
+            this.ckbAutomaticTransmission = new System.Windows.Forms.CheckBox();
+            this.ckbAirConditioner = new System.Windows.Forms.CheckBox();
             this.btnAddCar = new System.Windows.Forms.Button();
             this.btnDisplayCar = new System.Windows.Forms.Button();
             this.txtMake = new System.Windows.Forms.TextBox();
@@ -224,82 +224,16 @@
             this.groupBox1.TabIndex = 15;
             this.groupBox1.TabStop = false;
             // 
-            // rdbBlack
+            // rdbYellow
             // 
-            this.rdbBlack.AutoSize = true;
-            this.rdbBlack.Location = new System.Drawing.Point(6, 19);
-            this.rdbBlack.Name = "rdbBlack";
-            this.rdbBlack.Size = new System.Drawing.Size(52, 17);
-            this.rdbBlack.TabIndex = 0;
-            this.rdbBlack.TabStop = true;
-            this.rdbBlack.Text = "Black";
-            this.rdbBlack.UseVisualStyleBackColor = true;
-            // 
-            // rdbWhite
-            // 
-            this.rdbWhite.AutoSize = true;
-            this.rdbWhite.Location = new System.Drawing.Point(6, 42);
-            this.rdbWhite.Name = "rdbWhite";
-            this.rdbWhite.Size = new System.Drawing.Size(53, 17);
-            this.rdbWhite.TabIndex = 1;
-            this.rdbWhite.TabStop = true;
-            this.rdbWhite.Text = "White";
-            this.rdbWhite.UseVisualStyleBackColor = true;
-            // 
-            // rdbGray
-            // 
-            this.rdbGray.AutoSize = true;
-            this.rdbGray.Location = new System.Drawing.Point(6, 65);
-            this.rdbGray.Name = "rdbGray";
-            this.rdbGray.Size = new System.Drawing.Size(47, 17);
-            this.rdbGray.TabIndex = 2;
-            this.rdbGray.TabStop = true;
-            this.rdbGray.Text = "Gray";
-            this.rdbGray.UseVisualStyleBackColor = true;
-            // 
-            // rdbRed
-            // 
-            this.rdbRed.AutoSize = true;
-            this.rdbRed.Location = new System.Drawing.Point(6, 89);
-            this.rdbRed.Name = "rdbRed";
-            this.rdbRed.Size = new System.Drawing.Size(45, 17);
-            this.rdbRed.TabIndex = 3;
-            this.rdbRed.TabStop = true;
-            this.rdbRed.Text = "Red";
-            this.rdbRed.UseVisualStyleBackColor = true;
-            // 
-            // rdbBlue
-            // 
-            this.rdbBlue.AutoSize = true;
-            this.rdbBlue.Location = new System.Drawing.Point(6, 112);
-            this.rdbBlue.Name = "rdbBlue";
-            this.rdbBlue.Size = new System.Drawing.Size(46, 17);
-            this.rdbBlue.TabIndex = 4;
-            this.rdbBlue.TabStop = true;
-            this.rdbBlue.Text = "Blue";
-            this.rdbBlue.UseVisualStyleBackColor = true;
-            // 
-            // rdbGreen
-            // 
-            this.rdbGreen.AutoSize = true;
-            this.rdbGreen.Location = new System.Drawing.Point(99, 20);
-            this.rdbGreen.Name = "rdbGreen";
-            this.rdbGreen.Size = new System.Drawing.Size(54, 17);
-            this.rdbGreen.TabIndex = 5;
-            this.rdbGreen.TabStop = true;
-            this.rdbGreen.Text = "Green";
-            this.rdbGreen.UseVisualStyleBackColor = true;
-            // 
-            // rdbSilver
-            // 
-            this.rdbSilver.AutoSize = true;
-            this.rdbSilver.Location = new System.Drawing.Point(99, 42);
-            this.rdbSilver.Name = "rdbSilver";
-            this.rdbSilver.Size = new System.Drawing.Size(51, 17);
-            this.rdbSilver.TabIndex = 6;
-            this.rdbSilver.TabStop = true;
-            this.rdbSilver.Text = "Silver";
-            this.rdbSilver.UseVisualStyleBackColor = true;
+            this.rdbYellow.AutoSize = true;
+            this.rdbYellow.Location = new System.Drawing.Point(99, 89);
+            this.rdbYellow.Name = "rdbYellow";
+            this.rdbYellow.Size = new System.Drawing.Size(56, 17);
+            this.rdbYellow.TabIndex = 8;
+            this.rdbYellow.TabStop = true;
+            this.rdbYellow.Text = "Yellow";
+            this.rdbYellow.UseVisualStyleBackColor = true;
             // 
             // rdbBrown
             // 
@@ -312,16 +246,82 @@
             this.rdbBrown.Text = "Brown";
             this.rdbBrown.UseVisualStyleBackColor = true;
             // 
-            // rdbYellow
+            // rdbSilver
             // 
-            this.rdbYellow.AutoSize = true;
-            this.rdbYellow.Location = new System.Drawing.Point(99, 89);
-            this.rdbYellow.Name = "rdbYellow";
-            this.rdbYellow.Size = new System.Drawing.Size(56, 17);
-            this.rdbYellow.TabIndex = 8;
-            this.rdbYellow.TabStop = true;
-            this.rdbYellow.Text = "Yellow";
-            this.rdbYellow.UseVisualStyleBackColor = true;
+            this.rdbSilver.AutoSize = true;
+            this.rdbSilver.Location = new System.Drawing.Point(99, 42);
+            this.rdbSilver.Name = "rdbSilver";
+            this.rdbSilver.Size = new System.Drawing.Size(51, 17);
+            this.rdbSilver.TabIndex = 6;
+            this.rdbSilver.TabStop = true;
+            this.rdbSilver.Text = "Silver";
+            this.rdbSilver.UseVisualStyleBackColor = true;
+            // 
+            // rdbGreen
+            // 
+            this.rdbGreen.AutoSize = true;
+            this.rdbGreen.Location = new System.Drawing.Point(99, 20);
+            this.rdbGreen.Name = "rdbGreen";
+            this.rdbGreen.Size = new System.Drawing.Size(54, 17);
+            this.rdbGreen.TabIndex = 5;
+            this.rdbGreen.TabStop = true;
+            this.rdbGreen.Text = "Green";
+            this.rdbGreen.UseVisualStyleBackColor = true;
+            // 
+            // rdbBlue
+            // 
+            this.rdbBlue.AutoSize = true;
+            this.rdbBlue.Location = new System.Drawing.Point(6, 112);
+            this.rdbBlue.Name = "rdbBlue";
+            this.rdbBlue.Size = new System.Drawing.Size(46, 17);
+            this.rdbBlue.TabIndex = 4;
+            this.rdbBlue.TabStop = true;
+            this.rdbBlue.Text = "Blue";
+            this.rdbBlue.UseVisualStyleBackColor = true;
+            // 
+            // rdbRed
+            // 
+            this.rdbRed.AutoSize = true;
+            this.rdbRed.Location = new System.Drawing.Point(6, 89);
+            this.rdbRed.Name = "rdbRed";
+            this.rdbRed.Size = new System.Drawing.Size(45, 17);
+            this.rdbRed.TabIndex = 3;
+            this.rdbRed.TabStop = true;
+            this.rdbRed.Text = "Red";
+            this.rdbRed.UseVisualStyleBackColor = true;
+            // 
+            // rdbGray
+            // 
+            this.rdbGray.AutoSize = true;
+            this.rdbGray.Location = new System.Drawing.Point(6, 65);
+            this.rdbGray.Name = "rdbGray";
+            this.rdbGray.Size = new System.Drawing.Size(47, 17);
+            this.rdbGray.TabIndex = 2;
+            this.rdbGray.TabStop = true;
+            this.rdbGray.Text = "Gray";
+            this.rdbGray.UseVisualStyleBackColor = true;
+            // 
+            // rdbWhite
+            // 
+            this.rdbWhite.AutoSize = true;
+            this.rdbWhite.Location = new System.Drawing.Point(6, 42);
+            this.rdbWhite.Name = "rdbWhite";
+            this.rdbWhite.Size = new System.Drawing.Size(53, 17);
+            this.rdbWhite.TabIndex = 1;
+            this.rdbWhite.TabStop = true;
+            this.rdbWhite.Text = "White";
+            this.rdbWhite.UseVisualStyleBackColor = true;
+            // 
+            // rdbBlack
+            // 
+            this.rdbBlack.AutoSize = true;
+            this.rdbBlack.Location = new System.Drawing.Point(6, 19);
+            this.rdbBlack.Name = "rdbBlack";
+            this.rdbBlack.Size = new System.Drawing.Size(52, 17);
+            this.rdbBlack.TabIndex = 0;
+            this.rdbBlack.TabStop = true;
+            this.rdbBlack.Text = "Black";
+            this.rdbBlack.UseVisualStyleBackColor = true;
             // 
             // label9
             // 
@@ -347,46 +347,15 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
-            // ckbAirConditioner
+            // ckbFourWheelDrive
             // 
-            this.ckbAirConditioner.AutoSize = true;
-            this.ckbAirConditioner.Location = new System.Drawing.Point(6, 17);
-            this.ckbAirConditioner.Name = "ckbAirConditioner";
-            this.ckbAirConditioner.Size = new System.Drawing.Size(94, 17);
-            this.ckbAirConditioner.TabIndex = 0;
-            this.ckbAirConditioner.Text = "Air Conditioner";
-            this.ckbAirConditioner.UseVisualStyleBackColor = true;
-            this.ckbAirConditioner.CheckedChanged += new System.EventHandler(this.ckbAirConditioner_CheckedChanged);
-            // 
-            // ckbAutomaticTransmission
-            // 
-            this.ckbAutomaticTransmission.AutoSize = true;
-            this.ckbAutomaticTransmission.Location = new System.Drawing.Point(6, 41);
-            this.ckbAutomaticTransmission.Name = "ckbAutomaticTransmission";
-            this.ckbAutomaticTransmission.Size = new System.Drawing.Size(137, 17);
-            this.ckbAutomaticTransmission.TabIndex = 1;
-            this.ckbAutomaticTransmission.Text = "Automatic Transmission";
-            this.ckbAutomaticTransmission.UseVisualStyleBackColor = true;
-            // 
-            // ckbCruiseControl
-            // 
-            this.ckbCruiseControl.AutoSize = true;
-            this.ckbCruiseControl.Location = new System.Drawing.Point(6, 65);
-            this.ckbCruiseControl.Name = "ckbCruiseControl";
-            this.ckbCruiseControl.Size = new System.Drawing.Size(91, 17);
-            this.ckbCruiseControl.TabIndex = 2;
-            this.ckbCruiseControl.Text = "Cruise Control";
-            this.ckbCruiseControl.UseVisualStyleBackColor = true;
-            // 
-            // ckbNavigationSystem
-            // 
-            this.ckbNavigationSystem.AutoSize = true;
-            this.ckbNavigationSystem.Location = new System.Drawing.Point(6, 89);
-            this.ckbNavigationSystem.Name = "ckbNavigationSystem";
-            this.ckbNavigationSystem.Size = new System.Drawing.Size(114, 17);
-            this.ckbNavigationSystem.TabIndex = 3;
-            this.ckbNavigationSystem.Text = "Navigation System";
-            this.ckbNavigationSystem.UseVisualStyleBackColor = true;
+            this.ckbFourWheelDrive.AutoSize = true;
+            this.ckbFourWheelDrive.Location = new System.Drawing.Point(149, 41);
+            this.ckbFourWheelDrive.Name = "ckbFourWheelDrive";
+            this.ckbFourWheelDrive.Size = new System.Drawing.Size(109, 17);
+            this.ckbFourWheelDrive.TabIndex = 5;
+            this.ckbFourWheelDrive.Text = "Four Wheel Drive";
+            this.ckbFourWheelDrive.UseVisualStyleBackColor = true;
             // 
             // ckbSunroof
             // 
@@ -398,15 +367,46 @@
             this.ckbSunroof.Text = "Sunroof";
             this.ckbSunroof.UseVisualStyleBackColor = true;
             // 
-            // ckbFourWheelDrive
+            // ckbNavigationSystem
             // 
-            this.ckbFourWheelDrive.AutoSize = true;
-            this.ckbFourWheelDrive.Location = new System.Drawing.Point(149, 41);
-            this.ckbFourWheelDrive.Name = "ckbFourWheelDrive";
-            this.ckbFourWheelDrive.Size = new System.Drawing.Size(109, 17);
-            this.ckbFourWheelDrive.TabIndex = 5;
-            this.ckbFourWheelDrive.Text = "Four Wheel Drive";
-            this.ckbFourWheelDrive.UseVisualStyleBackColor = true;
+            this.ckbNavigationSystem.AutoSize = true;
+            this.ckbNavigationSystem.Location = new System.Drawing.Point(6, 89);
+            this.ckbNavigationSystem.Name = "ckbNavigationSystem";
+            this.ckbNavigationSystem.Size = new System.Drawing.Size(114, 17);
+            this.ckbNavigationSystem.TabIndex = 3;
+            this.ckbNavigationSystem.Text = "Navigation System";
+            this.ckbNavigationSystem.UseVisualStyleBackColor = true;
+            // 
+            // ckbCruiseControl
+            // 
+            this.ckbCruiseControl.AutoSize = true;
+            this.ckbCruiseControl.Location = new System.Drawing.Point(6, 65);
+            this.ckbCruiseControl.Name = "ckbCruiseControl";
+            this.ckbCruiseControl.Size = new System.Drawing.Size(91, 17);
+            this.ckbCruiseControl.TabIndex = 2;
+            this.ckbCruiseControl.Text = "Cruise Control";
+            this.ckbCruiseControl.UseVisualStyleBackColor = true;
+            // 
+            // ckbAutomaticTransmission
+            // 
+            this.ckbAutomaticTransmission.AutoSize = true;
+            this.ckbAutomaticTransmission.Location = new System.Drawing.Point(6, 41);
+            this.ckbAutomaticTransmission.Name = "ckbAutomaticTransmission";
+            this.ckbAutomaticTransmission.Size = new System.Drawing.Size(137, 17);
+            this.ckbAutomaticTransmission.TabIndex = 1;
+            this.ckbAutomaticTransmission.Text = "Automatic Transmission";
+            this.ckbAutomaticTransmission.UseVisualStyleBackColor = true;
+            // 
+            // ckbAirConditioner
+            // 
+            this.ckbAirConditioner.AutoSize = true;
+            this.ckbAirConditioner.Location = new System.Drawing.Point(6, 17);
+            this.ckbAirConditioner.Name = "ckbAirConditioner";
+            this.ckbAirConditioner.Size = new System.Drawing.Size(94, 17);
+            this.ckbAirConditioner.TabIndex = 0;
+            this.ckbAirConditioner.Text = "Air Conditioner";
+            this.ckbAirConditioner.UseVisualStyleBackColor = true;
+            this.ckbAirConditioner.CheckedChanged += new System.EventHandler(this.ckbAirConditioner_CheckedChanged);
             // 
             // btnAddCar
             // 
@@ -520,7 +520,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1028, 726);
+            this.ClientSize = new System.Drawing.Size(1476, 726);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);

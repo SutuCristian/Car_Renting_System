@@ -254,6 +254,7 @@ namespace UI_Forms
             lblsOptions = new Label[nrCars];
 
             int i = 0;
+            int topOffset = 15 * DIMENSION_PAS_Y;
             foreach (Cars car in cars)
             {
                 //add Label for car's maker
@@ -261,7 +262,7 @@ namespace UI_Forms
                 lblsMake[i].Width = WIDTH_CONTROL;
                 lblsMake[i].Text = car.Make;
                 lblsMake[i].Left = OFFSET_X + DIMENSION_PAS_X;
-                lblsMake[i].Top = (i + 1) * DIMENSION_PAS_Y * 15;
+                lblsMake[i].Top = topOffset + i * DIMENSION_PAS_Y;
                 this.Controls.Add(lblsMake[i]);
 
                 //add Label for car's model
@@ -269,7 +270,7 @@ namespace UI_Forms
                 lblsModel[i].Width = WIDTH_CONTROL;
                 lblsModel[i].Text = car.Model;
                 lblsModel[i].Left = OFFSET_X + 2 * DIMENSION_PAS_X;
-                lblsModel[i].Top = (i + 1) * DIMENSION_PAS_Y * 15;
+                lblsModel[i].Top = topOffset + i * DIMENSION_PAS_Y;
                 this.Controls.Add(lblsModel[i]);
 
                 //add Label for car's year
@@ -277,7 +278,7 @@ namespace UI_Forms
                 lblsYear[i].Width = WIDTH_CONTROL;
                 lblsYear[i].Text = Convert.ToString(car.Year);
                 lblsYear[i].Left = OFFSET_X + 3 * DIMENSION_PAS_X;
-                lblsYear[i].Top = (i + 1) * DIMENSION_PAS_Y * 15;
+                lblsYear[i].Top = topOffset + i * DIMENSION_PAS_Y;
                 this.Controls.Add(lblsYear[i]);
 
                 //add Label for car's price
@@ -285,7 +286,7 @@ namespace UI_Forms
                 lblsPrice[i].Width = WIDTH_CONTROL;
                 lblsPrice[i].Text = Convert.ToString(car.Price);
                 lblsPrice[i].Left = OFFSET_X + 4 * DIMENSION_PAS_X;
-                lblsPrice[i].Top = (i + 1) * DIMENSION_PAS_Y * 15;
+                lblsPrice[i].Top = topOffset + i * DIMENSION_PAS_Y;
                 this.Controls.Add(lblsPrice[i]);
 
                 //add Label for car's color
@@ -293,7 +294,7 @@ namespace UI_Forms
                 lblsColor[i].Width = WIDTH_CONTROL;
                 lblsColor[i].Text = car.Color.ToString();
                 lblsColor[i].Left = OFFSET_X + 5 * DIMENSION_PAS_X;
-                lblsColor[i].Top = (i + 1) * DIMENSION_PAS_Y * 15;
+                lblsColor[i].Top = topOffset + i * DIMENSION_PAS_Y;
                 this.Controls.Add(lblsColor[i]);
 
                 //add Label for car's options
@@ -301,9 +302,10 @@ namespace UI_Forms
                 lblsOptions[i].Width = WIDTH_CONTROL;
                 lblsOptions[i].Text = car.OptionsAsString;
                 lblsOptions[i].Left = OFFSET_X + 6 * DIMENSION_PAS_X;
-                lblsOptions[i].Top = (i + 1) * DIMENSION_PAS_Y * 15;
+                lblsOptions[i].Top = topOffset + i * DIMENSION_PAS_Y;
                 this.Controls.Add(lblsOptions[i]);
 
+                i++;
             }
         }
 

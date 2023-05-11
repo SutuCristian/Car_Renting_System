@@ -61,7 +61,7 @@ namespace CarLibrary
             Make = Model = string.Empty;
             Year = string.Empty;
             Price = string.Empty;
-            Color = CarColor.Unknown;
+            //Color = CarColor.Unknown;
             //Options = CarOptions.None;
         }
 

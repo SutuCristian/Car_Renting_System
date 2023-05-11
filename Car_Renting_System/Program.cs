@@ -166,8 +166,8 @@ namespace CarRenting_System
                 car.IdCar,
                 car.Make ?? " UNKNOWN ",
                 car.Model ?? " UNKNWON ",
-                car.Year,
-                car.Price,
+                car.Year ?? " UNKNOWN ",
+                car.Price ?? " UNKNOWN ",
                 car.Color,
                 car.Options);
 
@@ -192,10 +192,10 @@ namespace CarRenting_System
             string model = Console.ReadLine();
 
             Console.WriteLine("Enter the car's year: ");
-            int year = Convert.ToInt32(Console.ReadLine());
+            string year = Console.ReadLine();
 
             Console.WriteLine("Enter the car's price for renting: ");
-            double price = Convert.ToDouble(Console.ReadLine());
+            string price = Console.ReadLine();
 
             Console.WriteLine("Enter the car's color (Black, White, Gray, Red, Blue, Green, Silver, Brown, Yellow):");
             CarColor color = (CarColor)Enum.Parse(typeof(CarColor), Console.ReadLine(), true);
@@ -213,7 +213,7 @@ namespace CarRenting_System
                 }
             }
 
-            Cars car = new Cars(0, make, model, year, price, color, carOptions);
+            Cars car = new Cars(0, make, model, year, price /*, color, carOptions*/);
 
             return car;
         }

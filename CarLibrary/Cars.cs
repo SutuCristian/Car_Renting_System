@@ -1,10 +1,12 @@
 ﻿using System;
+using System.Collections;
 
 namespace CarLibrary
 {
     public class Cars
     {
         private const char MAIN_FILE_SEPARATOR = ';';
+        private const char SECONDARY_FILE_SEPARATOR = ' ';
 
         private const int ID_CAR = 0;
         private const int MAKE = 1;
@@ -29,29 +31,49 @@ namespace CarLibrary
         public int IdCar { get; set; }
         public string Make { get; set; }
         public string Model { get; set; }
-        public int Year { get; set; }
-        public double Price { get; set; }
+        public string Year { get; set; }
+        public string Price { get; set; }
         public CarColor Color { get; set; }
-        public CarOptions Options { get; set; }
+        public ArrayList Options { get; set; }
+
+        public string OptionsAsString
+        {
+            get
+            {
+                string cOptions = string.Empty;
+
+                foreach ( string option in Options)
+                {
+                    if (cOptions != string.Empty)
+                    {
+                        cOptions += SECONDARY_FILE_SEPARATOR;
+                    }
+                    cOptions += option;
+                }
+
+                return cOptions;
+
+            }
+        }
 
         public Cars()
         {
             Make = Model = string.Empty;
-            Year = 0;
-            Price = 0;
+            Year = string.Empty;
+            Price = string.Empty;
             Color = CarColor.Unknown;
-            Options = CarOptions.None;
+            //Options = CarOptions.None;
         }
 
-        public Cars(int idCar, string make, string model, int year, double price, CarColor color, CarOptions options)
+        public Cars(int idCar, string make, string model, string year, string price /*, CarColor color, CarOptions options*/)
         {
             this.IdCar = idCar;
             this.Make = make ?? throw new ArgumentNullException(nameof(make));
             this.Model = model ?? throw new ArgumentNullException(nameof(model));
             this.Year = year;
             this.Price = price;
-            this.Color = color;
-            this.Options = options;
+            //this.Color = color;
+            //this.Options = options;
         }
 
         public Cars(string fileLine)
@@ -61,10 +83,11 @@ namespace CarLibrary
             IdCar = Convert.ToInt32(fileData[ID_CAR]);
             Make = fileData[MAKE];
             Model = fileData[MODEL];
-            Year = Convert.ToInt32(fileData[YEAR]);
-            Price = Convert.ToDouble(fileData[PRICE]);
+            Year = fileData[YEAR];
+            Price = fileData[PRICE];
             Color = (CarColor)Enum.Parse(typeof(CarColor), fileData[COLOR], true);
-            Options = (CarOptions)Convert.ToInt32(fileData[OPTIONS]);
+            Options = new ArrayList();
+            Options.AddRange(fileData[OPTIONS].Split(SECONDARY_FILE_SEPARATOR));
         }
 
         public string InfoCar()
@@ -91,7 +114,7 @@ namespace CarLibrary
                 Year.ToString(),
                 Price.ToString(),
                 Color.ToString(),
-                ((int)Options).ToString());
+                OptionsAsString);
 
             return clientObjectForFile;
         }

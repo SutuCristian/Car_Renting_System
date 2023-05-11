@@ -29,7 +29,7 @@ namespace UI_Forms
         private const int DIMENSION_PAS_X = 120;
         private const int OFFSET_X = 600;
 
-        //Clients
+        //Client's labels
         private Label lblFirstName;
         private Label[] lblsFirstName;
 
@@ -41,8 +41,29 @@ namespace UI_Forms
 
         private Label lblPhone_Number;
         private Label[] lblsPhone_Number;
+        //--------------------------------------------------------------------------
 
-        //Cars
+        //Car's labels
+        private Label lblMaker;
+        private Label[] lblsMake;
+
+        private Label lblModel;
+        private Label[] lblsModel;
+
+        private Label lblYear;
+        private Label[] lblsYear;
+
+        private Label lblPrice;
+        private Label[] lblsPrice;
+
+        private Label lblColor;
+        private Label[] lblsColor;
+
+        private Label lblOptions;
+        private Label[] lblsOptions;
+
+        ArrayList selectedOptions = new ArrayList();
+        //-----------------------------------------------------------------------------
 
         public Form1()
         {
@@ -165,6 +186,127 @@ namespace UI_Forms
                 }
             }
 
+
+        private void DisplayCars()
+        {
+            //add Label for 'Maker'
+            lblMake = new Label();
+            lblMake.Width = WIDTH_CONTROL;
+            lblMake.Text = "Maker";
+            lblMake.Left = 6 * DIMENSION_PAS_X;
+            lblMake.Top = 14 * DIMENSION_PAS_Y;
+            lblMake.ForeColor = Color.DarkGreen;
+            this.Controls.Add(lblMake);
+
+            //add Label for 'Model'
+            lblModel = new Label();
+            lblModel.Width = WIDTH_CONTROL;
+            lblModel.Text = "Model";
+            lblModel.Left = 7 * DIMENSION_PAS_X;
+            lblModel.Top = 14 * DIMENSION_PAS_Y;
+            lblModel.ForeColor = Color.DarkGreen;
+            this.Controls.Add(lblModel);
+
+            //add Label for 'Year'
+            lblYear = new Label();
+            lblYear.Width = WIDTH_CONTROL;
+            lblYear.Text = "Year";
+            lblYear.Left = 8 * DIMENSION_PAS_X;
+            lblYear.Top = 14 * DIMENSION_PAS_Y;
+            lblYear.ForeColor = Color.DarkGreen;
+            this.Controls.Add(lblYear);
+
+            //add Label for 'Price'
+            lblPrice = new Label();
+            lblPrice.Width = WIDTH_CONTROL;
+            lblPrice.Text = "Price";
+            lblPrice.Left = 9 * DIMENSION_PAS_X;
+            lblPrice.Top = 14 * DIMENSION_PAS_Y;
+            lblPrice.ForeColor = Color.DarkGreen;
+            this.Controls.Add(lblPrice);
+
+            //add Label for "Car's color"
+            lblColor = new Label();
+            lblColor.Width = WIDTH_CONTROL;
+            lblColor.Text = "Car's color";
+            lblColor.Left = 10 * DIMENSION_PAS_X;
+            lblColor.Top = 14 * DIMENSION_PAS_Y;
+            lblColor.ForeColor = Color.DarkGreen;
+            this.Controls.Add(lblColor);
+
+            //add Label for "Car's options" 
+            lblOptions = new Label();
+            lblOptions.Width = WIDTH_CONTROL;
+            lblOptions.Text = "Car's options";
+            lblOptions.Left = 11 * DIMENSION_PAS_X;
+            lblOptions.Top = 14 * DIMENSION_PAS_Y;
+            lblOptions.ForeColor = Color.DarkGreen;
+            this.Controls.Add(lblOptions);
+
+            ArrayList cars = adminCars.GetCars();
+
+            int nrCars = cars.Count;
+            lblsMake = new Label[nrCars];
+            lblsModel = new Label[nrCars];
+            lblsYear = new Label[nrCars];
+            lblsPrice = new Label[nrCars];
+            lblsColor = new Label[nrCars];
+            lblsOptions = new Label[nrCars];
+
+            int i = 0;
+            foreach (Cars car in cars)
+            {
+                //add Label for car's maker
+                lblsMake[i] = new Label();
+                lblsMake[i].Width = WIDTH_CONTROL;
+                lblsMake[i].Text = car.Make;
+                lblsMake[i].Left = OFFSET_X + DIMENSION_PAS_X;
+                lblsMake[i].Top = (i + 1) * DIMENSION_PAS_Y * 15;
+                this.Controls.Add(lblsMake[i]);
+
+                //add Label for car's model
+                lblsModel[i] = new Label();
+                lblsModel[i].Width = WIDTH_CONTROL;
+                lblsModel[i].Text = car.Model;
+                lblsModel[i].Left = OFFSET_X + 2 * DIMENSION_PAS_X;
+                lblsModel[i].Top = (i + 1) * DIMENSION_PAS_Y * 15;
+                this.Controls.Add(lblsModel[i]);
+
+                //add Label for car's year
+                lblsYear[i] = new Label();
+                lblsYear[i].Width = WIDTH_CONTROL;
+                lblsYear[i].Text = Convert.ToString(car.Year);
+                lblsYear[i].Left = OFFSET_X + 3 * DIMENSION_PAS_X;
+                lblsYear[i].Top = (i + 1) * DIMENSION_PAS_Y * 15;
+                this.Controls.Add(lblsYear[i]);
+
+                //add Label for car's price
+                lblsPrice[i] = new Label();
+                lblsPrice[i].Width = WIDTH_CONTROL;
+                lblsPrice[i].Text = Convert.ToString(car.Price);
+                lblsPrice[i].Left = OFFSET_X + 4 * DIMENSION_PAS_X;
+                lblsPrice[i].Top = (i + 1) * DIMENSION_PAS_Y * 15;
+                this.Controls.Add(lblsPrice[i]);
+
+                //add Label for car's color
+                lblsColor[i] = new Label();
+                lblsColor[i].Width = WIDTH_CONTROL;
+                lblsColor[i].Text = car.Color.ToString();
+                lblsColor[i].Left = OFFSET_X + 5 * DIMENSION_PAS_X;
+                lblsColor[i].Top = (i + 1) * DIMENSION_PAS_Y * 15;
+                this.Controls.Add(lblsColor[i]);
+
+                //add Label for car's options
+                lblsOptions[i] = new Label();
+                lblsOptions[i].Width = WIDTH_CONTROL;
+                lblsOptions[i].Text = car.OptionsAsString;
+                lblsOptions[i].Left = OFFSET_X + 6 * DIMENSION_PAS_X;
+                lblsOptions[i].Top = (i + 1) * DIMENSION_PAS_Y * 15;
+                this.Controls.Add(lblsOptions[i]);
+
+            }
+        }
+
         private void ClientsControlReset()
         {
             txtFirstName.Text = txtLastName.Text = txtEmail.Text = txtPhoneNumber.Text = string.Empty;
@@ -179,7 +321,7 @@ namespace UI_Forms
         private void btnDisplayClient_Click(object sender, EventArgs e)
         {
             DisplayClients();
-            this.Width = 1200;
+            this.Width = 1500;
         }
 
         private void btnAddClient_Click_1(object sender, EventArgs e)
@@ -196,6 +338,109 @@ namespace UI_Forms
 
             //reset controls to add a new client
             ClientsControlReset();
+        }
+
+        private void textBox4_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label10_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnAddCar_Click(object sender, EventArgs e)
+        {          
+            Cars car = new Cars(0, txtMake.Text, txtModel.Text, txtYear.Text, txtPrice.Text);
+
+            CarColor selectedColor = GetSelectedColor();
+            car.Color = selectedColor;
+
+            car.Options = new ArrayList();
+            car.Options.AddRange(selectedOptions);
+
+            adminCars.AddCar(car);
+
+            CarsControlReset();
+
+        }
+
+        //private void ckbOptions_CheckedChanged(object sender, EventArgs e)
+        //{
+        //    CheckBox checkBoxControl = sender as CheckBox;
+
+        //    string selectedOption = checkBoxControl.Text;
+
+        //    if (checkBoxControl.Checked == true)
+        //        selectedOptions.Add(selectedOption);
+        //    else
+        //        selectedOptions.Remove(selectedOption);
+
+        //}
+
+        private void CarsControlReset()
+        {
+            txtMake.Text = txtModel.Text = txtYear.Text = txtPrice.Text = string.Empty;
+
+            rdbBlack.Checked = false;
+            rdbBlue.Checked = false;
+            rdbBrown.Checked = false;
+            rdbGray.Checked = false;
+            rdbGreen.Checked = false;
+            rdbRed.Checked = false;
+            rdbSilver.Checked = false;
+            rdbWhite.Checked = false;
+            rdbYellow.Checked = false;
+
+            ckbAirConditioner.Checked = false;
+            ckbAutomaticTransmission.Checked = false;
+            ckbCruiseControl.Checked = false;
+            ckbFourWheelDrive.Checked = false;
+            ckbNavigationSystem.Checked = false;
+            ckbSunroof.Checked = false;
+
+            selectedOptions.Clear();
+        }
+
+        private CarColor GetSelectedColor()
+        {
+            if (rdbBlack.Checked)
+                return CarColor.Black;
+            if (rdbWhite.Checked)
+                return CarColor.White;
+            if (rdbGray.Checked)
+                return CarColor.Gray;
+            if (rdbBlue.Checked)
+                return CarColor.Blue;
+            if (rdbBrown.Checked)
+                return CarColor.Brown;
+            if (rdbGreen.Checked)
+                return CarColor.Green;
+            if (rdbYellow.Checked)
+                return CarColor.Yellow;
+            if (rdbRed.Checked)
+                return CarColor.Red;
+            if (rdbSilver.Checked)
+                return CarColor.Silver;
+
+            return CarColor.Unknown;
+        }
+
+        private void btnDisplayCar_Click(object sender, EventArgs e)
+        {
+            DisplayCars();
+            this.Width = 2000;
+        }
+
+        private void groupBox2_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ckbAirConditioner_CheckedChanged(object sender, EventArgs e)
+        {
+
         }
 
         /*

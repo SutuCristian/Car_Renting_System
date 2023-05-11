@@ -13,7 +13,7 @@ namespace ClientDataStorage
     {
         private const int MaxClients = 50;
         private const int FIRST_CLIENT_ID = 1;
-        private const int INCREMENT = 1;
+        private const int INCREMENT_CLIENT = 1;
 
         private string fileName;
 
@@ -82,7 +82,7 @@ namespace ClientDataStorage
                 while ((fileLine = streamReader.ReadLine()) != null)
                 {
                     Clients client = new Clients(fileLine);
-                    IdClient = client.IdClient + INCREMENT;
+                    IdClient = client.IdClient + INCREMENT_CLIENT;
                 }
             }
 

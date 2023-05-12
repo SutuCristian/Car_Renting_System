@@ -94,7 +94,7 @@ namespace UI_Forms
             this.Location = new Point(100, 100);
             this.Font = new Font("Arial", 9, FontStyle.Bold);
             this.ForeColor = Color.LimeGreen;
-            this.Text = "Client's informations: ";
+            this.Text = "Car_Rental_System: ";
             
         }
             private void Form1_Load(object sender, EventArgs e)
@@ -299,7 +299,7 @@ namespace UI_Forms
 
                 //add Label for car's options
                 lblsOptions[i] = new Label();
-                lblsOptions[i].Width = WIDTH_CONTROL;
+                lblsOptions[i].Width = 5 * WIDTH_CONTROL;
                 lblsOptions[i].Text = car.OptionsAsString;
                 lblsOptions[i].Left = OFFSET_X + 6 * DIMENSION_PAS_X;
                 lblsOptions[i].Top = topOffset + i * DIMENSION_PAS_Y;
@@ -368,18 +368,18 @@ namespace UI_Forms
 
         }
 
-        //private void ckbOptions_CheckedChanged(object sender, EventArgs e)
-        //{
-        //    CheckBox checkBoxControl = sender as CheckBox;
+        private void ckbOptions_CheckedChanged(object sender, EventArgs e)
+        {
+            CheckBox checkBoxControl = sender as CheckBox;
 
-        //    string selectedOption = checkBoxControl.Text;
+            string selectedOption = checkBoxControl.Text;
 
-        //    if (checkBoxControl.Checked == true)
-        //        selectedOptions.Add(selectedOption);
-        //    else
-        //        selectedOptions.Remove(selectedOption);
+            if (checkBoxControl.Checked == true)
+                selectedOptions.Add(selectedOption);
+            else
+                selectedOptions.Remove(selectedOption);
 
-        //}
+        }
 
         private void CarsControlReset()
         {
@@ -436,11 +436,6 @@ namespace UI_Forms
         }
 
         private void groupBox2_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void ckbAirConditioner_CheckedChanged(object sender, EventArgs e)
         {
 
         }

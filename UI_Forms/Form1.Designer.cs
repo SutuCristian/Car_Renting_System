@@ -356,6 +356,7 @@
             this.ckbFourWheelDrive.TabIndex = 5;
             this.ckbFourWheelDrive.Text = "Four Wheel Drive";
             this.ckbFourWheelDrive.UseVisualStyleBackColor = true;
+            this.ckbFourWheelDrive.CheckedChanged += new System.EventHandler(this.ckbOptions_CheckedChanged);
             // 
             // ckbSunroof
             // 
@@ -366,6 +367,7 @@
             this.ckbSunroof.TabIndex = 4;
             this.ckbSunroof.Text = "Sunroof";
             this.ckbSunroof.UseVisualStyleBackColor = true;
+            this.ckbSunroof.CheckedChanged += new System.EventHandler(this.ckbOptions_CheckedChanged);
             // 
             // ckbNavigationSystem
             // 
@@ -376,6 +378,7 @@
             this.ckbNavigationSystem.TabIndex = 3;
             this.ckbNavigationSystem.Text = "Navigation System";
             this.ckbNavigationSystem.UseVisualStyleBackColor = true;
+            this.ckbNavigationSystem.CheckedChanged += new System.EventHandler(this.ckbOptions_CheckedChanged);
             // 
             // ckbCruiseControl
             // 
@@ -386,6 +389,7 @@
             this.ckbCruiseControl.TabIndex = 2;
             this.ckbCruiseControl.Text = "Cruise Control";
             this.ckbCruiseControl.UseVisualStyleBackColor = true;
+            this.ckbCruiseControl.CheckedChanged += new System.EventHandler(this.ckbOptions_CheckedChanged);
             // 
             // ckbAutomaticTransmission
             // 
@@ -396,6 +400,7 @@
             this.ckbAutomaticTransmission.TabIndex = 1;
             this.ckbAutomaticTransmission.Text = "Automatic Transmission";
             this.ckbAutomaticTransmission.UseVisualStyleBackColor = true;
+            this.ckbAutomaticTransmission.CheckedChanged += new System.EventHandler(this.ckbOptions_CheckedChanged);
             // 
             // ckbAirConditioner
             // 
@@ -406,7 +411,7 @@
             this.ckbAirConditioner.TabIndex = 0;
             this.ckbAirConditioner.Text = "Air Conditioner";
             this.ckbAirConditioner.UseVisualStyleBackColor = true;
-            this.ckbAirConditioner.CheckedChanged += new System.EventHandler(this.ckbAirConditioner_CheckedChanged);
+            this.ckbAirConditioner.CheckedChanged += new System.EventHandler(this.ckbOptions_CheckedChanged);
             // 
             // btnAddCar
             // 
@@ -520,12 +525,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1476, 726);
+            this.ClientSize = new System.Drawing.Size(1924, 1061);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.label10);
             this.Name = "Form1";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);

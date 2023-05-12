@@ -22,10 +22,10 @@ namespace CarLibrary
             None = 0,
             AirConditioner = 1,
             AutomaticTransmission = 2,
-            CruiseControl = 4,
-            NavigationSystem = 8,
-            Sunroof = 16,
-            FourWheelDrive = 32
+            CruiseControl = 3,
+            NavigationSystem = 4,
+            Sunroof = 5,
+            FourWheelDrive = 6
         }
 
         public int IdCar { get; set; }
@@ -33,7 +33,7 @@ namespace CarLibrary
         public string Model { get; set; }
         public string Year { get; set; }
         public string Price { get; set; }
-        public CarColor Color { get; set; }
+        public CarColor Color { get; set; }      
         public ArrayList Options { get; set; }
 
         public string OptionsAsString
@@ -68,8 +68,8 @@ namespace CarLibrary
         public Cars(int idCar, string make, string model, string year, string price /*, CarColor color, CarOptions options*/)
         {
             this.IdCar = idCar;
-            this.Make = make ?? throw new ArgumentNullException(nameof(make));
-            this.Model = model ?? throw new ArgumentNullException(nameof(model));
+            this.Make = make;
+            this.Model = model;
             this.Year = year;
             this.Price = price;
             //this.Color = color;
@@ -78,7 +78,7 @@ namespace CarLibrary
 
         public Cars(string fileLine)
         {
-            var fileData = fileLine.Split(MAIN_FILE_SEPARATOR);
+            string[] fileData = fileLine.Split(MAIN_FILE_SEPARATOR);
 
             IdCar = Convert.ToInt32(fileData[ID_CAR]);
             Make = fileData[MAKE];
@@ -92,14 +92,12 @@ namespace CarLibrary
 
         public string InfoCar()
         {
-            string info = string.Format("IdCar:{0}, Make: {1}, Model: {2}, Year: {3}, Price: {4}, Color: {5}, Options: {6}",
+            string info = string.Format("IdCar:{0}, Make: {1}, Model: {2}, Year: {3}, Price: {4}",
                 IdCar.ToString(),
                 (Make ?? " UNKNOWN "),
                 (Model ?? " UNKNOWN "),
-                Year.ToString(),
-                Price.ToString(),
-                Color.ToString(),
-                Options.ToString());
+                (Year ?? " UNKNOWN "),
+                (Price ?? " UNKNOWN "));
 
             return info;
         }
@@ -111,8 +109,8 @@ namespace CarLibrary
                 IdCar.ToString(),
                 (Make ?? " UNKNOWN "),
                 (Model ?? " UNKNOWN "),
-                Year.ToString(),
-                Price.ToString(),
+                (Year ?? " UNKNOWN "),
+                (Price ?? " UNKNOWN "),
                 Color.ToString(),
                 OptionsAsString);
 

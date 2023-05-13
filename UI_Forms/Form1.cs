@@ -21,7 +21,7 @@ namespace UI_Forms
     public partial class Form1 : Form
     {
 
-        ClientAdministration adminClients;
+        IDataStorageClients adminClients;
         CarAdministration adminCars;
 
         private const int WIDTH_CONTROL = 100;
@@ -73,7 +73,8 @@ namespace UI_Forms
             string fileName = ConfigurationManager.AppSettings["FileName"];
             string ClientsSolutionFileLocation = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.FullName;
             string ClientsCompleteFileLocation = Path.Combine(ClientsSolutionFileLocation, fileName);
-            adminClients = new ClientAdministration(ClientsCompleteFileLocation);
+            adminClients = FactoryStorage.GetAdminStorage();
+            //adminClients = new ClientAdministration(ClientsCompleteFileLocation);
             //int nrClients = 0;
             //Clients[] clients = adminClients.GetClients(out nrClients);
 
@@ -99,10 +100,11 @@ namespace UI_Forms
         }
             private void Form1_Load(object sender, EventArgs e)
             {
-                DisplayClients();
+                List<Clients> clients = adminClients.GetClients();
+                DisplayClients(clients);
             }
 
-            private void DisplayClients()
+            private void DisplayClients(List<Clients> clients)
             {
                     //add label for 'FirstName'
                  lblFirstName = new Label();
@@ -138,7 +140,7 @@ namespace UI_Forms
 
                  //Clients[] clients = adminClients.GetClients(out int nrClients);
 
-                ArrayList clients = adminClients.GetClients();
+                //ArrayList clients = adminClients.GetClients();
 
                 int nrClients = clients.Count;
                 lblsFirstName = new Label[nrClients];
@@ -152,7 +154,7 @@ namespace UI_Forms
 
                     //add Label for Client's first name
                     lblsFirstName[i] = new Label();
-                    lblsFirstName[i].Width = WIDTH_CONTROL;
+                    lblsFirstName[i].Width =WIDTH_CONTROL;
                     lblsFirstName[i].Text = client.First_name;
                     lblsFirstName[i].Left = OFFSET_X + DIMENSION_PAS_X;
                     lblsFirstName[i].Top = (i + 2) * DIMENSION_PAS_Y;
@@ -322,8 +324,18 @@ namespace UI_Forms
 
         private void btnDisplayClient_Click(object sender, EventArgs e)
         {
-            DisplayClients();
-            this.Width = 1500;
+            List <Clients> clients = adminClients.GetClients();
+            DisplayClients(clients);
+            DisplayClientsInControlListBox(clients);
+        }
+
+        private void DisplayClientsInControlListBox(List<Clients> clients)
+        {
+            lstDisplayClients.Items.Clear();
+            foreach (Clients client in clients)
+            {
+                lstDisplayClients.Items.Add(client);
+            }
         }
 
         private void btnAddClient_Click_1(object sender, EventArgs e)

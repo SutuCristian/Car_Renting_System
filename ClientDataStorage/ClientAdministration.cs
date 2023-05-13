@@ -2,14 +2,14 @@
 
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using System.IO;
-
-
-
+using System.Linq;
 
 namespace ClientDataStorage
 {
-    public class ClientAdministration
+
+    public class ClientAdministration: IDataStorageClients
     {
         private const int MaxClients = 50;
         private const int FIRST_CLIENT_ID = 1;
@@ -34,7 +34,7 @@ namespace ClientDataStorage
             }
         }
 
-        public ArrayList GetClients()
+        public List<Clients> GetClients()
         {
             ArrayList clients = new ArrayList();
 
@@ -49,7 +49,7 @@ namespace ClientDataStorage
                 }
             }
 
-            return clients;
+            return clients.Cast<Clients>().ToList();
 
         }
 
@@ -68,6 +68,46 @@ namespace ClientDataStorage
             }
 
             return null;
+
+        }
+
+        public Clients GetClient(int idClient)
+        {
+            using (StreamReader streamReader = new StreamReader(fileName))
+            {
+                string fileLine;
+
+                while((fileLine = streamReader.ReadLine())!= null)
+                {
+                    Clients client = new Clients(fileLine);
+                    if ( client.IdClient == idClient)
+                        return client;
+                }
+
+            }
+            return null;
+        }
+
+        public bool UpdateClient(Clients updatedClient)
+        {
+            List<Clients> clients = GetClients();
+            bool successfullyUpdated = false;
+
+            using (StreamWriter streamWriterTextFile = new StreamWriter(fileName, false))
+            {
+                foreach (Clients client in clients)
+                {
+                    Clients writeInFileClient = client;
+
+                    if(client.IdClient ==updatedClient.IdClient)
+                    {
+                        writeInFileClient = updatedClient;
+                    }
+                    streamWriterTextFile.WriteLine(writeInFileClient.ConvertToString_ForFile());
+                }
+                successfullyUpdated = true;
+            }
+            return successfullyUpdated;
 
         }
 

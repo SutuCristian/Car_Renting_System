@@ -1,2 +1,0 @@
-1;Mercedes;B200;2007;256,7;Gray;Air Conditioner
-2;KIA;Sportage;2023;350;Silver;Air Conditioner Automatic Transmission Navigation System Sunroof

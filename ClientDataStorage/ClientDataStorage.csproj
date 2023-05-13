@@ -42,6 +42,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ClientAdministration.cs" />
+    <Compile Include="ClientAdministration_BinaryFile.cs" />
+    <Compile Include="IdataStorageClients.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

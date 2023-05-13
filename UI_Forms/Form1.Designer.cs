@@ -71,6 +71,7 @@
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.label11 = new System.Windows.Forms.Label();
+            this.lstDisplayClients = new System.Windows.Forms.ListBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -521,11 +522,20 @@
             this.label11.TabIndex = 27;
             this.label11.Text = "Clients";
             // 
+            // lstDisplayClients
+            // 
+            this.lstDisplayClients.FormattingEnabled = true;
+            this.lstDisplayClients.Location = new System.Drawing.Point(390, 136);
+            this.lstDisplayClients.Name = "lstDisplayClients";
+            this.lstDisplayClients.Size = new System.Drawing.Size(990, 121);
+            this.lstDisplayClients.TabIndex = 28;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1924, 1061);
+            this.Controls.Add(this.lstDisplayClients);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
@@ -590,6 +600,7 @@
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.ListBox lstDisplayClients;
     }
 }
 

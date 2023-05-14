@@ -73,10 +73,14 @@
             this.label11 = new System.Windows.Forms.Label();
             this.lstDisplayClients = new System.Windows.Forms.ListBox();
             this.lstDisplayCars = new System.Windows.Forms.ListBox();
+            this.dataGridClients = new System.Windows.Forms.DataGridView();
+            this.dataGridCars = new System.Windows.Forms.DataGridView();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridClients)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridCars)).BeginInit();
             this.SuspendLayout();
             // 
             // btnAddClient
@@ -534,16 +538,35 @@
             // lstDisplayCars
             // 
             this.lstDisplayCars.FormattingEnabled = true;
-            this.lstDisplayCars.Location = new System.Drawing.Point(516, 571);
+            this.lstDisplayCars.Location = new System.Drawing.Point(465, 567);
             this.lstDisplayCars.Name = "lstDisplayCars";
-            this.lstDisplayCars.Size = new System.Drawing.Size(628, 147);
+            this.lstDisplayCars.Size = new System.Drawing.Size(474, 147);
             this.lstDisplayCars.TabIndex = 29;
+            // 
+            // dataGridClients
+            // 
+            this.dataGridClients.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridClients.Location = new System.Drawing.Point(844, 136);
+            this.dataGridClients.Name = "dataGridClients";
+            this.dataGridClients.Size = new System.Drawing.Size(400, 121);
+            this.dataGridClients.TabIndex = 30;
+            this.dataGridClients.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // dataGridCars
+            // 
+            this.dataGridCars.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridCars.Location = new System.Drawing.Point(986, 567);
+            this.dataGridCars.Name = "dataGridCars";
+            this.dataGridCars.Size = new System.Drawing.Size(474, 147);
+            this.dataGridCars.TabIndex = 31;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1924, 1061);
+            this.Controls.Add(this.dataGridCars);
+            this.Controls.Add(this.dataGridClients);
             this.Controls.Add(this.lstDisplayCars);
             this.Controls.Add(this.lstDisplayClients);
             this.Controls.Add(this.label11);
@@ -560,6 +583,8 @@
             this.groupBox3.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridClients)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridCars)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -612,6 +637,8 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.ListBox lstDisplayClients;
         private System.Windows.Forms.ListBox lstDisplayCars;
+        private System.Windows.Forms.DataGridView dataGridClients;
+        private System.Windows.Forms.DataGridView dataGridCars;
     }
 }
 

@@ -331,6 +331,7 @@ namespace UI_Forms
             List <Clients> clients = adminClients.GetClients();
             DisplayClients(clients);
             DisplayClientsInControlListBox(clients);
+            DisplayClientsInControlDataGridView(clients);
         }
 
         private void DisplayClientsInControlListBox(List<Clients> clients)
@@ -340,6 +341,14 @@ namespace UI_Forms
             {
                 lstDisplayClients.Items.Add(client);
             }
+        }
+
+        private void DisplayClientsInControlDataGridView(List<Clients> clients)
+        {
+            dataGridClients.DataSource = null;
+
+            dataGridClients.DataSource = clients;
+
         }
 
         private void btnAddClient_Click_1(object sender, EventArgs e)
@@ -450,6 +459,7 @@ namespace UI_Forms
             List<Cars> cars = adminCars.GetCars();
             DisplayCars(cars);
             DisplayCarsInControlListBox(cars);
+            DisplayCarsInControlDataGridView(cars);
         }
 
         private void DisplayCarsInControlListBox(List<Cars> cars)
@@ -461,7 +471,19 @@ namespace UI_Forms
             }
         }
 
+        private void DisplayCarsInControlDataGridView(List<Cars> cars)
+        {
+            dataGridCars.DataSource = null;
+
+            dataGridCars.DataSource = cars;
+        }
+
         private void groupBox2_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }

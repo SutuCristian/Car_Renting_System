@@ -1,0 +1,2 @@
+1;Mercedes;B200;2007;250,8;Gray;Air Conditioner
+2;KIA;Sportage;2023;345,6;Silver;Air Conditioner Cruise Control Navigation System Sunroof

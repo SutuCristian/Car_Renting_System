@@ -116,7 +116,14 @@ namespace CarLibrary
 
             return clientObjectForFile;
         }
+
+        public override string ToString()
+        {
+            return ConvertToString_ForFile();
+        }
+
     }
+
 
     public enum CarColor
     {

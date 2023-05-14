@@ -1,12 +1,14 @@
 ﻿using CarLibrary;
 
+using System;
 using System.Collections;
+using System.Collections.Generic;
 using System.IO;
-using System.Reflection;
+using System.Linq;
 
 namespace CarDataStorage
 {
-    public class CarAdministration
+    public class CarAdministration: IDataStorageCars
     {
         private const int MaxCars = 50;
         private const int FIRST_CAR_ID = 1;
@@ -31,7 +33,7 @@ namespace CarDataStorage
             }
         }
 
-        public ArrayList GetCars()
+        public List<Cars> GetCars()
         {
             ArrayList cars = new ArrayList();
 
@@ -46,7 +48,7 @@ namespace CarDataStorage
                 }
             }
 
-            return cars;
+            return cars.Cast<Cars>().ToList();
 
         }
 
@@ -68,7 +70,7 @@ namespace CarDataStorage
 
         }
 
-        private int GetIdCar()
+        private int GetCar()
         {
             int IdCar = FIRST_CAR_ID;
 
@@ -103,6 +105,65 @@ namespace CarDataStorage
             }
 
             return cars;
+        }
+
+        public Cars GetCar(int idCar)
+        {
+
+            using (StreamReader streamReader = new StreamReader(fileNameCar))
+            {
+                string fileLine;
+
+                while ((fileLine = streamReader.ReadLine()) != null)
+                {
+                    Cars car = new Cars(fileLine);
+                    if (car.IdCar == idCar)
+                        return car;
+                }
+            }
+            return null;
+
+        }
+
+        public bool UpdateCar(Cars updatedCar)
+        {
+            List<Cars> cars = GetCars();
+            bool successfullyUpdated = false;
+
+            using (StreamWriter streamWriterTextFile = new StreamWriter(fileNameCar, false))
+            {
+                foreach (Cars car in cars)
+                {
+                    Cars writeInFileCar = car;
+
+                    if (car.IdCar == updatedCar.IdCar)
+                    {
+                        writeInFileCar = updatedCar;
+                    }
+                    streamWriterTextFile.WriteLine(writeInFileCar.ConvertToString_ForFile());
+                }
+                successfullyUpdated = true;
+            }
+            return successfullyUpdated;
+        }
+
+        private int GetIdCar()
+        {
+            int IdCar = FIRST_CAR_ID;
+
+            using (StreamReader streamReader = new StreamReader(fileNameCar))
+            {
+                string fileLine;
+
+                while((fileLine = streamReader.ReadLine())!= null)
+                {
+                    Cars car = new Cars(fileLine);
+                    IdCar = car.IdCar + INCREMENT_CAR;
+                }
+
+            }
+            return IdCar;
+
         }
 
     }

@@ -42,6 +42,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CarAdministration.cs" />
+    <Compile Include="CarAdministration_BinaryFile.cs" />
+    <Compile Include="IDataStorageCars.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

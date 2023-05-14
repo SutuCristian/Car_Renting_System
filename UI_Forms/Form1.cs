@@ -22,7 +22,7 @@ namespace UI_Forms
     {
 
         IDataStorageClients adminClients;
-        CarAdministration adminCars;
+        IDataStorageCars adminCars;
 
         private const int WIDTH_CONTROL = 100;
         private const int DIMENSION_PAS_Y = 30;
@@ -83,7 +83,8 @@ namespace UI_Forms
             string fileNameCar = ConfigurationManager.AppSettings["FileNameCar"];
             string CarSolutionFileLocation = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.FullName;
             string CarCompleteFileLocation = Path.Combine(CarSolutionFileLocation, fileNameCar);
-            adminCars = new CarAdministration(CarCompleteFileLocation);
+            adminCars = FactoryStorageCars.GetAdminStorageCar();
+            //adminCars = new CarAdministration(CarCompleteFileLocation);
             //int nrCars = 0;
             //Cars[] cars = adminCars.GetCars(out nrCars);
 
@@ -102,6 +103,9 @@ namespace UI_Forms
             {
                 List<Clients> clients = adminClients.GetClients();
                 DisplayClients(clients);
+
+                 List<Cars> cars = adminCars.GetCars();
+                 DisplayCars(cars);
             }
 
             private void DisplayClients(List<Clients> clients)
@@ -189,7 +193,7 @@ namespace UI_Forms
             }
 
 
-        private void DisplayCars()
+        private void DisplayCars(List<Cars> cars)
         {
             //add Label for 'Maker'
             lblMake = new Label();
@@ -245,7 +249,7 @@ namespace UI_Forms
             lblOptions.ForeColor = Color.DarkGreen;
             this.Controls.Add(lblOptions);
 
-            ArrayList cars = adminCars.GetCars();
+           // ArrayList cars = adminCars.GetCars();
 
             int nrCars = cars.Count;
             lblsMake = new Label[nrCars];
@@ -443,8 +447,18 @@ namespace UI_Forms
 
         private void btnDisplayCar_Click(object sender, EventArgs e)
         {
-            DisplayCars();
-            this.Width = 2000;
+            List<Cars> cars = adminCars.GetCars();
+            DisplayCars(cars);
+            DisplayCarsInControlListBox(cars);
+        }
+
+        private void DisplayCarsInControlListBox(List<Cars> cars)
+        {
+            lstDisplayCars.Items.Clear();
+            foreach (Cars car in cars)
+            {
+                lstDisplayCars.Items.Add(car);
+            }
         }
 
         private void groupBox2_Enter(object sender, EventArgs e)

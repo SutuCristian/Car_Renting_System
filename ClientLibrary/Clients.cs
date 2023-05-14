@@ -67,5 +67,11 @@ namespace ClientLibrary
 
             return clientObjectForFile;
         }
+
+        public override string ToString()
+        {
+            return ConvertToString_ForFile();
+        }
+
     }
 }
